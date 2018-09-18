@@ -63,13 +63,11 @@ Stores.prototype.total = function () {
 }
 }
 
-
-
-
-
-
-
-
+var firstStore = new Stores('First and Pike', 23, 65, 6.3);
+var secondStore = new Stores('SeaTac Airport', 3, 24, 1.2);
+var thirdStore = new Stores('Seattle Center', 11, 38, 3.7);
+var fourthStore = new Stores('Capitol Hill', 20, 38, 2.3);
+var fifthStore = new Stores('Alki', 2, 16, 4.6);
 
 
 var firstStore = {
@@ -338,16 +336,16 @@ var fifthStore = {
 };
 
 function loopingStores() {
-  for(var i = 0; i < storesArray.length; i++) {
-    storesArray[i].getAvgCustomersHour();
-    storesArray[i].getArraySum();
-    storesArray[i].getAvgCookiesHour();
-    storesArray[i].render();
-    storesArray[i].total();
-    console.log('Average Customers per Hour ' + storesArray[i].avgCustomersHour);
-    console.log('Average Cookies per Hour ' + storesArray[i].avgCookiesHour);
-    console.log(storesArray[i].totalCustomers);
-    console.log(storesArray[i].totalCookies);
+  for(var i = 0; i < Stores.list.length; i++) {
+    Stores.list[i].getAvgCustomersHour();
+    Stores.list[i].getArraySum();
+    Stores.list[i].getAvgCookiesHour();
+    Stores.list[i].render();
+    Stores.list[i].total();
+    console.log('Average Customers per Hour ' + Stores.list[i].avgCustomersHour);
+    console.log('Average Cookies per Hour ' + Stores.list[i].avgCookiesHour);
+    console.log(Stores.list[i].totalCustomers);
+    console.log(Stores.list[i].totalCookies);
   }
 };
 
