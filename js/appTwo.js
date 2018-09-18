@@ -13,7 +13,7 @@ var firstStore = {
   avgCookiesHour: 0,
   cookiesArray: [],
   totalCookies: 0,
-  getRandomNum: function(min, max) {
+  getRandomNumber: function(min, max) {
     return Math.random() * (max - min) + min;
   },
   getAvgCustomersHour: function() {
@@ -61,7 +61,7 @@ var secondStore = {
   avgCookiesHour: 0,
   cookiesArray: [],
   totalCookies: 0,
-  getRandomNum: function(min, max) {
+  getRandomNumber: function(min, max) {
     return Math.random() * (max - min) + min;
   },
   getAvgCustomersHour: function() {
@@ -109,7 +109,7 @@ var thirdStore = {
   avgCookiesHour: 0,
   cookiesArray: [],
   totalCookies: 0,
-  getRandomNum: function(min, max) {
+  getRandomNumber: function(min, max) {
     return Math.random() * (max - min) + min;
   },
   getAvgCustomersHour: function() {
@@ -157,7 +157,7 @@ var fourthStore = {
   avgCookiesHour: 0,
   cookiesArray: [],
   totalCookies: 0,
-  getRandomNum: function(min, max) {
+  getRandomNumber: function(min, max) {
     return Math.random() * (max - min) + min;
   },
   getAvgCustomersHour: function() {
@@ -205,7 +205,7 @@ var fifthStore = {
   avgCookiesHour: 0,
   cookiesArray: [],
   totalCookies: 0,
-  getRandomNum: function(min, max) {
+  getRandomNumber: function(min, max) {
     return Math.random() * (max - min) + min;
   },
   getAvgCustomersHour: function() {
