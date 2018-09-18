@@ -24,7 +24,6 @@ var firstStore = {
   getArraySum: function() {
     for (var i = 0; i < this.avgCookiesHour.length; i++) {
       this.totalCookies += this.avgCookiesHour[i];
-      console.log(this.totalCookies);
     }
   },
   getAvgCookiesHour: function () {
@@ -73,7 +72,6 @@ var secondStore = {
   getArraySum: function() {
     for (var i = 0; i < this.avgCookiesHour.length; i++) {
       this.totalCookies += this.avgCookiesHour[i];
-      console.log(this.totalCookies);
     }
   },
   getAvgCookiesHour: function () {
@@ -122,7 +120,6 @@ var thirdStore = {
   getArraySum: function() {
     for (var i = 0; i < this.avgCookiesHour.length; i++) {
       this.totalCookies += this.avgCookiesHour[i];
-      console.log(this.totalCookies);
     }
   },
   getAvgCookiesHour: function () {
@@ -171,7 +168,6 @@ var fourthStore = {
   getArraySum: function() {
     for (var i = 0; i < this.avgCookiesHour.length; i++) {
       this.totalCookies += this.avgCookiesHour[i];
-      console.log(this.totalCookies);
     }
   },
   getAvgCookiesHour: function () {
@@ -220,7 +216,6 @@ var fifthStore = {
   getArraySum: function() {
     for (var i = 0; i < this.avgCookiesHour.length; i++) {
       this.totalCookies += this.avgCookiesHour[i];
-      console.log(this.totalCookies);
     }
   },
   getAvgCookiesHour: function () {
