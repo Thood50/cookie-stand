@@ -9,7 +9,7 @@ var firstStore = {
   maxCustomers: 65,
   avgSale: 6.3,
   avgCustomersHour: [],
-  totalCustomersDay: 0,
+  totalCustomersDay: [],
   avgCookiesHour: 0,
   cookiesArray: [],
   totalCookies: 0,
@@ -18,7 +18,7 @@ var firstStore = {
   },
   getAvgCustomersHour: function() {
     for (var i = 0; i < globalTime.length; i++) {
-      this.avgCustomersHour = this.getRandomNumber(this.minCustomers, this.maxCustomers)
+      this.avgCustomersHour = this.getRandomNumber(this.minCustomers, this.maxCustomers);
     }
   },
   getArraySum: function() {
@@ -27,18 +27,23 @@ var firstStore = {
     }
   },
   getAvgCookiesHour: function () {
-    this.avgCookiesHour = (this.totalCustomersDay * this.avgSale)/globalTime.length;
+    return this.avgCookiesHour = (this.totalCustomersDay * this.avgSale)/globalTime.length;
 
   },
   getTotalCookies: function() {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
-    var newUl = document.createElement('ul');
+    var body = document.getElementsByTagName('body')[0];
+    var header = document.createElement('h2');
+    var position = document.createElement('ul');
+    header.textContent = this.storeName;
+    body.appendChild(header);
+    body.appendChild(position);
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      newUl.appendChild(newEl);
+      position.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
@@ -81,11 +86,16 @@ var secondStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
-    var newUl = document.createElement('ul');
+    var body = document.getElementsByTagName('body')[0];
+    var header = document.createElement('h2');
+    var position = document.createElement('ul');
+    header.textContent = this.storeName;
+    body.appendChild(header);
+    body.appendChild(position);
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      newUl.appendChild(newEl);
+      position.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
@@ -128,11 +138,16 @@ var thirdStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
-    var newUl = document.createElement('ul');
+    var body = document.getElementsByTagName('body')[0];
+    var header = document.createElement('h2');
+    var position = document.createElement('ul');
+    header.textContent = this.storeName;
+    body.appendChild(header);
+    body.appendChild(position);
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      newUl.appendChild(newEl);
+      position.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
@@ -175,11 +190,16 @@ var fourthStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
-    var newUl = document.createElement('ul');
+    var body = document.getElementsByTagName('body')[0];
+    var header = document.createElement('h2');
+    var position = document.createElement('ul');
+    header.textContent = this.storeName;
+    body.appendChild(header);
+    body.appendChild(position);
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      newUl.appendChild(newEl);
+      position.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
@@ -222,11 +242,16 @@ var fifthStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
-    var newUl = document.createElement('ul');
+    var body = document.getElementsByTagName('body')[0];
+    var header = document.createElement('h2');
+    var position = document.createElement('ul');
+    header.textContent = this.storeName;
+    body.appendChild(header);
+    body.appendChild(position);
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      newUl.appendChild(newEl);
+      position.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
