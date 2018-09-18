@@ -34,19 +34,18 @@ var firstStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
+    var newUl = document.getElementById('ul');
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      var newUl = document.getElementById(this.storeName);
       newUl.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
   total: function () {
-    this.totalCookies = this.totalCustomersDay * this.avgSale;
+    var newUl = document.getElementById('ul');
     var newEl = document.createElement('li');
     newEl.textContent = 'Total ' + this.totalCookies;
-    var newUl = document.getElementById(this.storeName);
     newUl.appendChild(newEl);
   }
 };
@@ -82,19 +81,18 @@ var secondStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
+    var newUl = document.getElementById('ul');
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      var newUl = document.getElementById(this.storeName);
       newUl.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
   total: function () {
-    this.totalCookies = this.totalCustomersDay * this.avgSale;
+    var newUl = document.getElementById('ul');
     var newEl = document.createElement('li');
     newEl.textContent = 'Total ' + this.totalCookies;
-    var newUl = document.getElementById(this.storeName);
     newUl.appendChild(newEl);
   }
 };
@@ -130,19 +128,18 @@ var thirdStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
+    var newUl = document.getElementById('ul');
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      var newUl = document.getElementById(this.storeName);
       newUl.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
   total: function () {
-    this.totalCookies = this.totalCustomersDay * this.avgSale;
+    var newUl = document.getElementById('ul');
     var newEl = document.createElement('li');
     newEl.textContent = 'Total ' + this.totalCookies;
-    var newUl = document.getElementById(this.storeName);
     newUl.appendChild(newEl);
   }
 };
@@ -178,19 +175,18 @@ var fourthStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
+    var newUl = document.getElementById('ul');
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      var newUl = document.getElementById(this.storeName);
       newUl.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
   total: function () {
-    this.totalCookies = this.totalCustomersDay * this.avgSale;
+    var newUl = document.getElementById('ul');
     var newEl = document.createElement('li');
     newEl.textContent = 'Total ' + this.totalCookies;
-    var newUl = document.getElementById(this.storeName);
     newUl.appendChild(newEl);
   }
 };
@@ -226,19 +222,18 @@ var fifthStore = {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
   },
   render: function () {
+    var newUl = document.getElementById('ul');
     for (var i = 0; i < globalTime.length; i++) {
       var newEl = document.createElement('li');
       newEl.textContent = globalTime[i] + ' - ' + this.avgCookiesHour;
-      var newUl = document.getElementById(this.storeName);
       newUl.appendChild(newEl);
       this.cookiesArray.push(this.avgCookiesHour);
     }
   },
   total: function () {
-    this.totalCookies = this.totalCustomersDay * this.avgSale;
+    var newUl = document.getElementById('ul');
     var newEl = document.createElement('li');
     newEl.textContent = 'Total ' + this.totalCookies;
-    var newUl = document.getElementById(this.storeName);
     newUl.appendChild(newEl);
   }
 };
