@@ -121,6 +121,18 @@ function productSum(sum, avgCookies, total) {
   locationArray.push(total);
 }
 
+function render() {
+    for (var i = 0; i < days.length; i++) {
+      this.getAvgCustomersHour();
+      this.getAvgCookiesHour();
+      var liEl = document.createElement('li');
+      liEl.textContent = days[i] + ' ' + this.avgCookiesHour;
+      var firstUl = document.getElementById('first');
+      firstUl.appendChild(liEl);
+      this.cookiesArray.push(this.avgCookiesHour);
+    }
+  }
+
 firstAndPike.randomNum();
 seatacAirport.randomNum();
 seattleCenter.randomNum();
@@ -140,3 +152,4 @@ productSum(hillSum, hillCookies, hillTotal);
 productSum(alkiSum, alkiCookies, alkiTotal);
 
 console.log(locationArray);
+
