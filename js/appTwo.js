@@ -236,7 +236,6 @@ var fifthStore = {
   },
   getAvgCookiesHour: function () {
     this.avgCookiesHour = (this.totalCustomersDay * this.avgSale)/globalTime.length;
-  
   },
   getTotalCookies: function() {
     this.totalCookies = this.totalCustomersDay * this.avgSale;
