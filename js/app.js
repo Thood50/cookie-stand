@@ -2,9 +2,9 @@
 
 var Stores = function(name, minCust, maxCust, avgSale) {
   this.storeName = name;
-  this.minCustomers = minCust;
-  this.maxCustomers = maxCust;
-  this.avgSale = avgSale;
+  this.minCustomers = parseInt(minCust);
+  this.maxCustomers = parseInt(maxCust);
+  this.avgSale = parseInt(avgSale);
   this.avgCustomersHour = [];
   this.avgCookiesHour = [];
   this.totalCookies = 0;
@@ -14,7 +14,7 @@ var Stores = function(name, minCust, maxCust, avgSale) {
 Stores.list = [];
 Stores.total = [];
 var globalTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-var newForm = document.getElementsByTagName('form');
+var newForm = document.getElementById('form');
 
 Stores.prototype.getRandomNumber = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -106,7 +106,7 @@ function renderFooter() {
   var asdf = document.getElementsByTagName('table');
   var tfoot = document.createElement('tfoot');
   var tr = document.createElement('tr');
-  var th = document.createElement('th')
+  var th = document.createElement('th');
 
   tr.appendChild(th);
   tfoot.appendChild(tr);
@@ -126,18 +126,22 @@ function renderFooter() {
 
 function addNewStore(event) {
   event.preventDefault();
+  console.log('event.preventDefault');
 
   var storeName = event.target.storeName.value;
   var minCust = event.target.minCust.value;
   var maxCust = event.target.maxCust.value;
-  var avgSale = event.target.avg.value;
+  var avgSale = event.target.avgSold.value;
   var storeTable = document.getElementById('storeTable');
+  console.log('variables created');
 
   new Stores(storeName, minCust, maxCust, avgSale);
+  console.log('new store created');
 
   storeTable.innerHTML = '';
-  renderHeader();
-  renderFooter();
+  console.log('table cleared');
+  loopingStores();
+  console.log('display table');
 }
 
 var firstStore = new Stores('First and Pike', 23, 65, 6.3);
@@ -161,6 +165,6 @@ function loopingStores() {
   renderFooter();
 }
 
-newForm.addEventListener('text', addNewStore);
+newForm.addEventListener('submit', addNewStore);
 
 loopingStores();
