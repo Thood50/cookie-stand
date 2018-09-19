@@ -26,12 +26,6 @@ Stores.prototype.getAvgCustomersHour = function() {
   }
 };
 
-Stores.prototype.getArraySum = function() {
-  for (var i = 0; i < this.avgCookiesHour.length; i++) {
-    this.totalCookies += this.avgCookiesHour[i];
-  }
-},
-
 Stores.prototype.getAvgCookiesHour = function () {
   for(var i = 0; i < this.avgCustomersHour.length; i++) {
     var hourlyCookies = (this.avgCustomersHour[i] * this.avgSale);
@@ -39,7 +33,13 @@ Stores.prototype.getAvgCookiesHour = function () {
   }
 },
 
-Stores.prototype.getTimeCookies = function () {
+Stores.prototype.getArraySum = function() {
+  for (var i = 0; i < this.avgCookiesHour.length; i++) {
+    this.totalCookies += this.avgCookiesHour[i];
+  }
+},
+
+Stores.prototype.getTotalHourlyCookies = function () {
   for(var i = 0; i < globalTime.length; i++) {
     var sum = 0;
     for(var k = 0; k < Stores.list.length; k++) {
@@ -54,8 +54,6 @@ Stores.prototype.renderGlobalTime = function () {
   var thead = document.createElement('thead');
   var tr = document.createElement('tr');
   var th = document.createElement('th');
-
-  var storeName = document.createTextNode('Stores');
 
   tr.appendChild(th);
   thead.appendChild(tr);
@@ -123,7 +121,7 @@ Stores.prototype.renderFooter = function() {
     th.appendChild(hourlyCookiesSold);
     tr.appendChild(th);
   }
-}
+};
 
 var firstStore = new Stores('First and Pike', 23, 65, 6.3);
 var secondStore = new Stores('SeaTac Airport', 3, 24, 1.2);
@@ -142,7 +140,7 @@ function loopingStores() {
     console.log('Average Cookies per Hour ' + Stores.list[i].avgCookiesHour);
     console.log(Stores.list[i].totalCookies);
   }
-  Stores.prototype.getTimeCookies();
+  Stores.prototype.getTotalHourlyCookies();
   Stores.prototype.renderFooter();
 }
 
