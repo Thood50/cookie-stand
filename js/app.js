@@ -12,7 +12,7 @@ var Stores = function(name, minCust, maxCust, avgSale) {
 };
 
 Stores.list = [];
-Stores.time = [];
+Stores.total = [];
 var globalTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 Stores.prototype.getRandomNumber = function(min, max) {
@@ -43,8 +43,8 @@ Stores.prototype.getTimeCookies = function () {
   for(var i = 0; i < globalTime.length; i++) {
     for(var k = 0; k < Stores.list.length; k++) {
       var sum = 0;
-      sum +=Stores.list[k].avgCookieshour[i];
-      Stores.time.push(sum);
+      sum +=Stores.list[k].avgCookiesHour[i];
+      Stores.total.push(sum);
     }
   }
 }
@@ -76,7 +76,7 @@ Stores.prototype.renderGlobalTime = function () {
   th = document.createElement('th');
   th.appendChild(totalCookies);
   tr.appendChild(th);
-}
+};
 
 Stores.prototype.render = function () {
   var asdf = document.getElementsByTagName('table');
@@ -121,6 +121,6 @@ function loopingStores() {
     console.log(Stores.list[i].totalCookies);
   }
   Stores.prototype.getTimeCookies();
-};
+}
 
 loopingStores();
