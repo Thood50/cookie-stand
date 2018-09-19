@@ -57,18 +57,23 @@ Stores.prototype.renderGlobalTime = function () {
 
   var storeName = document.createTextNode('Stores');
 
-  th.appendChild(storeName);
   tr.appendChild(th);
   thead.appendChild(tr);
   asdf[0].appendChild(thead);
 
+  var storeLocations = document.createTextNode('Locations');
+  th.appendChild(storeLocations);
+  tr.appendChild(th);
+
   for (var i = 0; i < globalTime.length; i++) {
-    var td = document.createElement('td');
+    th = document.createElement('th');
     var hoursOfOperation = document.createTextNode(globalTime[i]);
-    td.appendChild(hoursOfOperation);
-    tr.appendChild(td);
+    th.appendChild(hoursOfOperation);
+    tr.appendChild(th);
   }
+
   var totalCookies = document.createTextNode('Total');
+  th = document.createElement('th');
   th.appendChild(totalCookies);
   tr.appendChild(th);
 }
