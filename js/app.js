@@ -39,6 +39,31 @@ Stores.prototype.getArraySum = function() {
   }
 },
 
+Stores.prototype.render = function () {
+  var asdf = document.getElementsByTagName('table');
+  var tbody = document.createElement('tbody');
+  var tr = document.createElement('tr');
+  var th = document.createElement('th');
+  
+  var storeName = document.createTextNode(this.storeName);
+
+  th.appendChild(storeName);
+  tr.appendChild(th);
+  tbody.appendChild(tr);
+  asdf[0].appendChild(tbody);
+
+  for (var i = 0; i < globalTime.length; i++) {
+    var td = document.createElement('td');
+    var cookieSales = document.createTextNode(this.avgCookiesHour[i]);
+    td.appendChild(cookieSales);
+    tr.appendChild(td);
+  } 
+  var td = document.createElement('td');
+  var totalCookies = document.createTextNode(this.totalCookies);
+  td.appendChild(totalCookies);
+  tr.appendChild(td);
+};
+
 Stores.prototype.getTotalHourlyCookies = function () {
   for(var i = 0; i < globalTime.length; i++) {
     var sum = 0;
@@ -47,9 +72,9 @@ Stores.prototype.getTotalHourlyCookies = function () {
     }
     Stores.total.push(sum);
   }
-}
+};
 
-Stores.prototype.renderGlobalTime = function () {
+function renderHeader() {
   var asdf = document.getElementsByTagName('table');
   var thead = document.createElement('thead');
   var tr = document.createElement('tr');
@@ -76,32 +101,7 @@ Stores.prototype.renderGlobalTime = function () {
   tr.appendChild(th);
 };
 
-Stores.prototype.render = function () {
-  var asdf = document.getElementsByTagName('table');
-  var tbody = document.createElement('tbody');
-  var tr = document.createElement('tr');
-  var th = document.createElement('th');
-  
-  var storeName = document.createTextNode(this.storeName);
-
-  th.appendChild(storeName);
-  tr.appendChild(th);
-  tbody.appendChild(tr);
-  asdf[0].appendChild(tbody);
-
-  for (var i = 0; i < globalTime.length; i++) {
-    var td = document.createElement('td');
-    var cookieSales = document.createTextNode(this.avgCookiesHour[i]);
-    td.appendChild(cookieSales);
-    tr.appendChild(td);
-  } 
-  var td = document.createElement('td');
-  var totalCookies = document.createTextNode(this.totalCookies);
-  td.appendChild(totalCookies);
-  tr.appendChild(td);
-};
-
-Stores.prototype.renderFooter = function() {
+function renderFooter() {
   var asdf = document.getElementsByTagName('table');
   var tfoot = document.createElement('tfoot');
   var tr = document.createElement('tr');
@@ -130,7 +130,7 @@ var fourthStore = new Stores('Capitol Hill', 20, 38, 2.3);
 var fifthStore = new Stores('Alki', 2, 16, 4.6);
 
 function loopingStores() {
-  Stores.prototype.renderGlobalTime();
+  renderHeader();
   for(var i = 0; i < Stores.list.length; i++) {
     Stores.list[i].getAvgCustomersHour();
     Stores.list[i].getAvgCookiesHour();
@@ -141,7 +141,7 @@ function loopingStores() {
     console.log(Stores.list[i].totalCookies);
   }
   Stores.prototype.getTotalHourlyCookies();
-  Stores.prototype.renderFooter();
-}
+  renderFooter();
+};
 
 loopingStores();

@@ -41,6 +41,7 @@ header {
 
 td:last-child {
     background: white;
+    font-weight: bold;
 }
 
 h1 {
@@ -62,4 +63,9 @@ tbody{
 tfoot {
 background: black;
 color: white;
+}
+
+table:not(:first-child):hover {
+    background:#444;
+    color:#fff;
 }
