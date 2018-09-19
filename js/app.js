@@ -41,11 +41,11 @@ Stores.prototype.getAvgCookiesHour = function () {
 
 Stores.prototype.getTimeCookies = function () {
   for(var i = 0; i < globalTime.length; i++) {
+    var sum = 0;
     for(var k = 0; k < Stores.list.length; k++) {
-      var sum = 0;
       sum +=Stores.list[k].avgCookiesHour[i];
-      Stores.total.push(sum);
     }
+    Stores.total.push(sum);
   }
 }
 
@@ -103,6 +103,28 @@ Stores.prototype.render = function () {
   tr.appendChild(td);
 };
 
+Stores.prototype.renderFooter = function() {
+  var asdf = document.getElementsByTagName('table');
+  var tfoot = document.createElement('tfoot');
+  var tr = document.createElement('tr');
+  var th = document.createElement('th')
+
+  tr.appendChild(th);
+  tfoot.appendChild(tr);
+  asdf[0].appendChild(tfoot);
+
+  var hourlyTotals = document.createTextNode('Hourly Totals');
+  th.appendChild(hourlyTotals);
+  tr.appendChild(th);
+
+  for(var i = 0; i < globalTime.length; i++) {
+    th = document.createElement('th');
+    var hourlyCookiesSold = document.createTextNode(Stores.total[i]);
+    th.appendChild(hourlyCookiesSold);
+    tr.appendChild(th);
+  }
+}
+
 var firstStore = new Stores('First and Pike', 23, 65, 6.3);
 var secondStore = new Stores('SeaTac Airport', 3, 24, 1.2);
 var thirdStore = new Stores('Seattle Center', 11, 38, 3.7);
@@ -121,6 +143,7 @@ function loopingStores() {
     console.log(Stores.list[i].totalCookies);
   }
   Stores.prototype.getTimeCookies();
+  Stores.prototype.renderFooter();
 }
 
 loopingStores();
