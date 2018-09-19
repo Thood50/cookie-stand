@@ -125,12 +125,19 @@ function renderFooter() {
 }
 
 function addNewStore(event) {
-  var storeName = .storeName.value;
-  var minCust = .minCust.value;
-  var maxCust = .maxCust.value;
-  var avgSale = .avg.value;
+  event.preventDefault();
 
+  var storeName = event.target.storeName.value;
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var avgSale = event.target.avg.value;
+  var storeTable = document.getElementById('storeTable');
 
+  new Stores(storeName, minCust, maxCust, avgSale);
+
+  storeTable.innerHTML = '';
+  renderHeader();
+  renderFooter();
 }
 
 var firstStore = new Stores('First and Pike', 23, 65, 6.3);
