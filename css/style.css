@@ -2,17 +2,15 @@ html {
     background-image: url(../img/lake.jpg);
     background-repeat: no-repeat;
 }
-table, th, td {
-    border-radius: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    overflow: hidden;
-}
 
 #storeTable {
     width:  200px;
     margin-left: 26%;
     margin-top: 100px;
+    /* display:block;
+    overflow:auto;
+    height:400px;
+    width:100%; */
 }
 
 th {
@@ -21,12 +19,21 @@ th {
     padding-top: 30px;
     height: 50px;
     font-weight: bold;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    width: 10px !important;
 }
 
 td {
     border: 2px inset blue;
     text-align: center;
     border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    width: 30px;
 }
 
 header {
@@ -39,7 +46,7 @@ td:last-child {
 }
 
 h1 {
-    font-size: 40pt;
+    font-size: 50pt;
 }
 
 h2 {
@@ -47,18 +54,37 @@ h2 {
 }
 
 thead {
- background: black;
- color: white;
+    display: block;
+    background: black;
+    color: white;
+    border-radius: 25px;
 }
 
 tfoot {
-background: black;
-color: white;
+    display: block;
+    background: black;
+    color: white;
+    border-radius: 25px;
+}
+tfoot>tr>th {
+    padding-left: 19px;
+    width: 950px;
 }
 
 form {
-	margin-top: 175px;
+	margin-top: 150px;
     margin-left: 150px;
     font-size: 15px;
     font-weight: bold;
+}
+
+tbody>tr:hover {
+    background: grey;
+}
+
+tbody {
+    display:block;
+    overflow:auto;
+    height:400px;
+    width: 950px;
 }

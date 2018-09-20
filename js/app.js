@@ -44,8 +44,7 @@ Stores.prototype.getArraySum = function() {
 },
 
 Stores.prototype.render = function () {
-  var theTable = document.getElementById('storeTable');
-  var tbody = document.createElement('tbody');
+  var tbody = document.getElementsByTagName('tbody')[0];
   var tr = document.createElement('tr');
   var th = document.createElement('th');
   var storeName = document.createTextNode(this.storeName);
@@ -53,7 +52,6 @@ Stores.prototype.render = function () {
   th.appendChild(storeName);
   tr.appendChild(th);
   tbody.appendChild(tr);
-  theTable.appendChild(tbody);
 
   for (var i = 0; i < globalTime.length; i++) {
     var td = document.createElement('td');
@@ -67,7 +65,7 @@ Stores.prototype.render = function () {
   tr.appendChild(td);
 };
 
-Stores.prototype.getTotalHourlyCookies = function () {
+function getTotalHourlyCookies() {
   for(var i = 0; i < globalTime.length; i++) {
     var sum = 0;
     for(var k = 0; k < Stores.list.length; k++) {
@@ -75,7 +73,7 @@ Stores.prototype.getTotalHourlyCookies = function () {
     }
     Stores.total.push(sum);
   }
-};
+}
 
 function renderHeader() {
   var theTable = document.getElementById('storeTable');
@@ -137,6 +135,7 @@ function addNewStore(event) {
 
   var newStore = new Stores(storeName, minCust, maxCust, avgSale);
 
+  Stores.total = [];
   newStore.getAvgCustomersHour();
   newStore.getAvgCookiesHour();
   newStore.getArraySum();
@@ -146,10 +145,13 @@ function addNewStore(event) {
 
 function loopingStores() {
   renderHeader();
+  var theTable = document.getElementById('storeTable');
+  var tbody = document.createElement('tbody');
+  theTable.appendChild(tbody);
   for(var i = 0; i < Stores.list.length; i++) {
     Stores.list[i].render();
   }
-  Stores.prototype.getTotalHourlyCookies();
+  getTotalHourlyCookies();
   renderFooter();
 }
 
