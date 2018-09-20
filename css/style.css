@@ -47,6 +47,9 @@ td:last-child {
 
 h1 {
     font-size: 50pt;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
 }
 
 h2 {
