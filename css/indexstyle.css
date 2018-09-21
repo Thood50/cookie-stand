@@ -1,0 +1,94 @@
+html {
+    background-image: url(../img/seattle-city-lights-24329-24989-hd-wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    position: fixed;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font: italic small-caps bold 50px/2 cursive;
+}
+
+h3 {
+    font: italic small-caps bold 30px/2 cursive;
+}
+
+body {
+    color: white;
+}
+
+h3 {
+    text-align: left;
+    font-size: 25px;
+    color: white;
+    padding-top: 100px;
+}
+
+ul {
+    font-size: 20px;
+}
+
+li {
+    padding: 10px;
+}
+
+#sectionOne {
+    padding-top: 100px;     
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* background-color: red; */
+    color: white;
+    text-align: center;
+}
+
+#salmon {
+    margin-top: 900px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+
+#cutter {
+    margin: 100px;
+    border-image: 5px;
+    border-color: grey;
+
+}
+
+#family {
+    margin: 100px;
+}
+
+#fish {
+    margin: 100px;
+}
+
+#cookie {
+    margin: 100px;
+}
+
+#shirt {
+    margin: 100px;
+}
+
+#chinook {
+    margin: 100px;
+}
+
+#bottom {
+    margin-bottom: 300px;
+}
+
+#link {
+    position: right;
+}
